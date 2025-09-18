@@ -78,6 +78,7 @@ def abrirChamado():
     CHAMADOS[id] = chamadoAtual
     salvarDados()
     print(f"Chamado #{id} Criado com sucesso! ")
+    sleep(0.9)
 
 def percorrerChamados(status = ""):
     totalChamados = 0
