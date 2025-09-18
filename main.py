@@ -11,14 +11,14 @@ while True:
         
         if op == 0:
             print('\nSaindo do sistema...')
+            sleep(0.9)
             break
         elif op == 1:
             listarChamados()
         elif op == 2:
             abrirChamado()
         elif op == 3:
-            limparTela()
-            cabecalho('BUSCAR CHAMADO')
+            buscarChamado()
         else:
             limparTela()
             print('\nOPÇÃO INVÁLIDA! Selecione apenas dentre as disponíveis.')

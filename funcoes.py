@@ -208,5 +208,15 @@ def listarChamados():
             limparTela()
             print('\nERRO! Digite apenas números. ')
 
+def buscarChamado():
+    limparTela()
+    cabecalho('BUSCAR CHAMADO')
+    id = input('Digite o ID do chamado: ')
+    if id in CHAMADOS:
+        detalhesChamado(id)
+    else:
+        print('Chamado não encontrado! Tente outro ID')
+        sleep(0.9)
+
 def limparTela():
     os.system('cls')
