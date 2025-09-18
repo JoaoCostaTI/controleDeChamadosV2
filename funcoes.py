@@ -1,5 +1,7 @@
 import json
 import time
+import os
+from time import sleep
 
 CHAMADOS = {}
 
@@ -31,17 +33,29 @@ def cabecalho(msg=""):
     print(f"{msg.center(tam)}")
     print('=' * tam)
 
-def resumo(user="",chamadoAberto = 0, chamadoAndamento = 0):
+def resumo(user=""):
+    chamadosAberto = 0
+    chamadosEmAndamento = 0
+    chamadosFechado = 0
+    for chamado in CHAMADOS.values():
+        if chamado['status'] == "Aberto":
+            chamadosAberto += 1
+        elif chamado['status'] == "Em andamento":
+            chamadosEmAndamento += 1
+        elif chamado['status'] == 'Fechado':
+            chamadosFechado += 1
     print(f'Olá, {user}!\n')
     print('Resumo rápido:')
-    print(f"  - Você tem {chamadoAberto} chamados ABERTOS.")
-    print(f"  - Você tem {chamadoAndamento} chamados em ANDAMENTO atribuídos a você.")
+    print(f"  - {chamadosAberto} chamados ABERTOS.")
+    print(f"  - {chamadosEmAndamento} chamados em ANDAMENTO atribuídos a você.")
+    print(f'  - {chamadosFechado} chamados CONCLUÍDOS')
 
 def menu():
     print("[1] Ver lista de Chamados\n[2] Criar novo Chamado\n[3] Buscar por um chamado Específico\n[0] Sair do Sistema\n")
 
 def abrirChamado():
-
+    limparTela()
+    cabecalho('REGISTRAR CHAMADO')
     solicitante = str(input('Seu nome: ')).strip().upper()
     setor = str(input("Setor: ")).strip().upper()
     descricao = str(input('Detalhamento da solicitação: ')).strip().lower()
@@ -105,18 +119,25 @@ def percorrerChamados(status = ""):
 def atualizarChamado(id = ""):  
     print(f'--- ATUALIZAR CHAMADO #{id} ---')
     print('O que você deseja fazer? ')
-    print('[1] - Fechar chamado\n[2] - Adicionar histórico (Observações)\n[0] - Cancelar')
+    print('[1] - Colocar Em Andamento\n[2] - FECHAR chamado\n[3] - Adicionar histórico (Observações)\n[0] - Cancelar')
     op = int(input('SUA OPÇÃO: '))
     if op == 0:
         print('Voltando ao menu anterior...')
         return
     elif op == 1:
         chamadoAtual = CHAMADOS[id]
+        chamadoAtual['status'] = 'Em andamento'
+        CHAMADOS[id] = chamadoAtual
+        print(f'Alterado com sucesso para {chamadoAtual['status']}...')
+        salvarDados()
+
+    elif op == 2:
+        chamadoAtual = CHAMADOS[id]
         chamadoAtual['status'] = 'Fechado'
         CHAMADOS[id] = chamadoAtual
         print(f'Alterado com sucesso para {chamadoAtual['status']}...')
         salvarDados()
-    elif op == 2:
+    elif op == 3:
         chamadoAtual = CHAMADOS[id]
         chamadoAtual['obs'] = str(input('Digite as observações: ')).strip()
         CHAMADOS[id] = chamadoAtual
@@ -126,6 +147,7 @@ def atualizarChamado(id = ""):
         print('Nenhuma opção válida! Tente novamente. ')
 
 def detalhesChamado(id = ""):
+    limparTela()
     print('-'*85)
     if id == "" or id not in CHAMADOS:
         print('XXX - Chamado NÃO encontrado... Tente outro. - XXX')
@@ -154,27 +176,37 @@ def detalhesChamado(id = ""):
         atualizarChamado(id)
     else:
         print('XXX - Opção inválida! Tente novamente - XXX')
+        sleep(0.8)
         return    
     
-
 def listarChamados():
     while True:
         try:
+            limparTela()
+            cabecalho('LISTA DE CHAMADOS')
             print('[1] - Abertos\n[2] - Em andamento\n[3] - Fechados\n[4] - Todos\n[0] - Voltar menu ')
             op = int(input('SUA OPÇÃO: '))
             if op == 0:
                 print('Voltando menu...')
                 break
             elif op == 1:
+                limparTela()
                 percorrerChamados('Aberto')
             elif op == 2:
+                limparTela()
                 percorrerChamados('Em andamento')
             elif op == 3:
+                limparTela()
                 percorrerChamados('Fechado')
             elif op == 4:
+                limparTela()
                 percorrerChamados("")
             else:
+                limparTela()
                 print('Nenhuma opção selecionada, tente novamente...')
         except ValueError:
+            limparTela()
             print('\nERRO! Digite apenas números. ')
-        
+
+def limparTela():
+    os.system('cls')

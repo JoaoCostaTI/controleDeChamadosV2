@@ -12,7 +12,8 @@
         "setor": "FINANCEIRO",
         "data": "12/9/2025 - 11:05",
         "descricao": "erro ao acessar sistema bancário",
-        "status": "Aberto"
+        "status": "Aberto",
+        "obs": "Estou dando andamento"
     },
     "1003": {
         "solicitante": "CARLOS",
@@ -54,14 +55,14 @@
         "setor": "FINANCEIRO",
         "data": "12/9/2025 - 13:05",
         "descricao": "problema em abrir planilha",
-        "status": "Fechado"
+        "status": "Em andamento"
     },
     "1009": {
         "solicitante": "MARCOS",
         "setor": "SUPORTE",
         "data": "12/9/2025 - 13:27",
         "descricao": "monitor piscando",
-        "status": "Aberto"
+        "status": "Em andamento"
     },
     "1010": {
         "solicitante": "PATRÍCIA",
@@ -75,6 +76,13 @@
         "setor": "ENGENHARIA",
         "data": "12/9/2025 - 14:20",
         "descricao": "software de desenho travando",
+        "status": "Aberto"
+    },
+    "1012": {
+        "solicitante": "123",
+        "setor": "123",
+        "data": "17/9/2025 - 16:34",
+        "descricao": "123",
         "status": "Aberto"
     }
 }

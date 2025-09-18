@@ -2,8 +2,9 @@ from funcoes import *
 
 while True:
     try:
+        limparTela()
         cabecalho("SISTEMA DE GERENCIAMENTO DE CHAMADOS v1.0")
-        resumo('João Costa', 3, 5)
+        resumo('João Costa')
         cabecalho("MENU PRINCIPAL")
         menu()
         op = int(input('Sua opção: '))
@@ -12,14 +13,16 @@ while True:
             print('\nSaindo do sistema...')
             break
         elif op == 1:
-            cabecalho('LISTA DE CHAMADOS')
             listarChamados()
         elif op == 2:
-            cabecalho('REGISTRAR CHAMADO')
             abrirChamado()
         elif op == 3:
+            limparTela()
             cabecalho('BUSCAR CHAMADO')
         else:
+            limparTela()
             print('\nOPÇÃO INVÁLIDA! Selecione apenas dentre as disponíveis.')
     except ValueError:
+        limparTela()
         print('\nERRO! Digite apenas números. ')
+        
