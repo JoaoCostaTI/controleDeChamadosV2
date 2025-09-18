@@ -1,88 +1,9 @@
 {
-    "1001": {
-        "solicitante": "JOÃO",
-        "setor": "INFORMÁTICA",
-        "data": "12/9/2025 - 10:42",
-        "descricao": "cabo de rede pc",
-        "status": "Fechado",
-        "obs": "Foi colocado o cabo de rede, mas resta pendente a canaleta"
-    },
-    "1002": {
-        "solicitante": "MARIA",
-        "setor": "FINANCEIRO",
-        "data": "12/9/2025 - 11:05",
-        "descricao": "erro ao acessar sistema bancário",
-        "status": "Aberto",
-        "obs": "Estou dando andamento"
-    },
-    "1003": {
-        "solicitante": "CARLOS",
-        "setor": "RH",
-        "data": "12/9/2025 - 11:17",
-        "descricao": "impressora sem conexão",
-        "status": "Em andamento"
-    },
-    "1004": {
-        "solicitante": "ANA",
-        "setor": "COMERCIAL",
-        "data": "12/9/2025 - 11:40",
-        "descricao": "e-mail não enviado",
-        "status": "Fechado"
-    },
-    "1005": {
-        "solicitante": "PEDRO",
-        "setor": "LOGÍSTICA",
-        "data": "12/9/2025 - 12:03",
-        "descricao": "sistema de estoque lento",
-        "status": "Aberto"
-    },
-    "1006": {
-        "solicitante": "FERNANDA",
-        "setor": "MARKETING",
-        "data": "12/9/2025 - 12:15",
-        "descricao": "acesso ao drive bloqueado",
-        "status": "Aberto"
-    },
-    "1007": {
-        "solicitante": "ROBERTO",
-        "setor": "DIRETORIA",
-        "data": "12/9/2025 - 12:42",
-        "descricao": "queda de conexão VPN",
-        "status": "Em andamento"
-    },
-    "1008": {
-        "solicitante": "LUCIANA",
-        "setor": "FINANCEIRO",
-        "data": "12/9/2025 - 13:05",
-        "descricao": "problema em abrir planilha",
-        "status": "Em andamento"
-    },
-    "1009": {
-        "solicitante": "MARCOS",
-        "setor": "SUPORTE",
-        "data": "12/9/2025 - 13:27",
-        "descricao": "monitor piscando",
-        "status": "Em andamento"
-    },
-    "1010": {
-        "solicitante": "PATRÍCIA",
-        "setor": "COMPRAS",
-        "data": "12/9/2025 - 13:55",
-        "descricao": "erro de login no sistema interno",
-        "status": "Aberto"
-    },
-    "1011": {
-        "solicitante": "GABRIEL",
-        "setor": "ENGENHARIA",
-        "data": "12/9/2025 - 14:20",
-        "descricao": "software de desenho travando",
-        "status": "Aberto"
-    },
-    "1012": {
-        "solicitante": "123",
-        "setor": "123",
-        "data": "17/9/2025 - 16:34",
-        "descricao": "123",
+    "1000": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "18/9/2025 - 16:20",
+        "descricao": "procurar fornecedores para conserto botao power monitor dell (b87gky3)",
         "status": "Aberto"
     }
 }
