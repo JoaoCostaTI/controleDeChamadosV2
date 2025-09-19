@@ -22,7 +22,6 @@ except FileNotFoundError:
     CHAMADOS = {}
 
 
-
 def salvarDados():
     with open('baseDeDados.json', 'w', encoding='utf-8') as arquivo:
         json.dump(CHAMADOS, arquivo, ensure_ascii=False, indent=4)
@@ -75,7 +74,7 @@ def abrirChamado():
     chamadoAtual['status'] = "Aberto"
 
     #ID do chamado
-    id = pegarUltimoID()
+    id = str(pegarUltimoID())
     CHAMADOS[id] = chamadoAtual
     salvarDados()
     print(f"Chamado #{id} Criado com sucesso! ")
@@ -106,7 +105,6 @@ def percorrerChamados(status = ""):
     print(f"{'ID':<5} | {'Descrição':<75} | {'Solicitante':<15} | {'Status'}")
     print('-'*115)
     for i, c in CHAMADOS.items():
-        
         if c['status'] == status:
             print(f"{i:<5} | {c['descricao']:75} | {c['solicitante']:<15} | {c['status']}")
             totalChamados += 1
@@ -157,8 +155,8 @@ def atualizarChamado(id = ""):
 def detalhesChamado(id = ""):
     limparTela()
     print('-'*115)
-    if id == "" or id not in CHAMADOS:
-        print('XXX - Chamado NÃO encontrado... Tente outro. - XXX')
+    if id not in CHAMADOS:
+        print(f'XXX - Chamado {id} NÃO encontrado... Tente outro. - XXX')
         sleep(0.9)
         return
     cabecalho(f"Detalhes do chamado #{id}")

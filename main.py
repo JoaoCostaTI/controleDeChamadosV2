@@ -2,7 +2,7 @@ from funcoes import *
 
 while True:
     try:
-        limparTela()
+        
         cabecalho("SISTEMA DE GERENCIAMENTO DE CHAMADOS v1.0")
         resumo('João Costa')
         cabecalho("MENU PRINCIPAL")
