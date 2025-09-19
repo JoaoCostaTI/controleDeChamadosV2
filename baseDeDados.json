@@ -4,14 +4,15 @@
         "setor": "INFORMATICA",
         "data": "18/9/2025 - 16:20",
         "descricao": "procurar fornecedores para conserto botao power monitor dell (b87gky3)",
-        "status": "Aberto"
+        "status": "Aberto",
+        "obs": "Realizado nova tentativa de abertura de OS junto a Dell, mas não foi possível. Protocolo = 215985021"
     },
     "1001": {
         "solicitante": "JOAO",
         "setor": "INFORMATICA",
         "data": "18/9/2025 - 16:22",
         "descricao": "preparar bat bloqueio store microsoft",
-        "status": "Aberto"
+        "status": "Em andamento"
     },
     "1002": {
         "solicitante": "EDUARDO",
@@ -25,7 +26,7 @@
         "setor": "SUPERVISAO TECNICA",
         "data": "18/9/2025 - 16:23",
         "descricao": "instalação computadores bim",
-        "status": "Aberto"
+        "status": "Fechado"
     },
     "1004": {
         "solicitante": "PATRICIA",
@@ -46,6 +47,34 @@
         "setor": "INFORMATICA",
         "data": "18/9/2025 - 16:25",
         "descricao": "mapear switchs de rede (fixar ip's)",
+        "status": "Aberto"
+    },
+    "1007": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "19/9/2025 - 11:30",
+        "descricao": "instalar veyon (computadores que eram do bim) no lab 4",
+        "status": "Aberto"
+    },
+    "1008": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "19/9/2025 - 11:30",
+        "descricao": "colocar computadores biblioteca",
+        "status": "Aberto"
+    },
+    "1009": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "19/9/2025 - 13:26",
+        "descricao": "controle atualização windows 10",
+        "status": "Aberto"
+    },
+    "1010": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "19/9/2025 - 13:28",
+        "descricao": "chamado teste",
         "status": "Aberto"
     }
 }

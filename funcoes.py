@@ -28,7 +28,7 @@ def salvarDados():
         json.dump(CHAMADOS, arquivo, ensure_ascii=False, indent=4)
 
 def cabecalho(msg=""):
-    tam = 60
+    tam = 110
     print('=' * tam)
     print(f"{msg.center(tam)}")
     print('=' * tam)
@@ -52,6 +52,7 @@ def resumo(user=""):
 
 def menu():
     print("[1] Ver lista de Chamados\n[2] Criar novo Chamado\n[3] Buscar por um chamado Específico\n[0] Sair do Sistema\n")
+    sleep(0.9)
 
 def abrirChamado():
     limparTela()
@@ -83,37 +84,39 @@ def abrirChamado():
 def percorrerChamados(status = ""):
     totalChamados = 0
     if status == "":
-        print('-'*85)
+        print('-'*115)
         cabecalho('TODOS CHAMADOS')
-        print(f"{'ID':<5} | {'Descrição':<40} | {'Solicitante':<15} | {'Status'}")
-        print('-'*85)
+        print(f"{'ID':<5} | {'Descrição':<75} | {'Solicitante':<15} | {'Status'}")
+        print('-'*115)
         for i, c in CHAMADOS.items():
-            print(f"{i:<5} | {c['descricao']:<40} | {c['solicitante']:<15} | {c['status']}")
+            print(f"{i:<5} | {c['descricao']:<75} | {c['solicitante']:<15} | {c['status']}")
             totalChamados += 1
         print(f"=== Total de chamados: {totalChamados} ===")
-        print('-'*85)
+        print('-'*115)
         print(f'Digite um ID para ver detalhes | [V]oltar ao menu')
         op = str(input('SUA OPÇÃO: ')).strip().lower()
         if op == "v":
             print('Retornando ao menu anterior...')
+            sleep(0.9)
             return
         detalhesChamado(op)
         return 
-    print('-'*85)
+    print('-'*115)
     cabecalho(f'CHAMADOS {status.upper()}')
-    print(f"{'ID':<5} | {'Descrição':<40} | {'Solicitante':<15} | {'Status'}")
-    print('-'*85)
+    print(f"{'ID':<5} | {'Descrição':<75} | {'Solicitante':<15} | {'Status'}")
+    print('-'*115)
     for i, c in CHAMADOS.items():
         
         if c['status'] == status:
-            print(f"{i:<5} | {c['descricao']:<40} | {c['solicitante']:<15} | {c['status']}")
+            print(f"{i:<5} | {c['descricao']:75} | {c['solicitante']:<15} | {c['status']}")
             totalChamados += 1
     print(f"=== Total de chamados: {totalChamados} ===")
-    print('-'*85)
+    print('-'*115)
     print(f'Digite um ID para ver detalhes | [V]oltar ao menu')
     op = str(input('SUA OPÇÃO: ')).strip().lower()
     if op == 'v':
         print('Retornando ao menu anterior...')
+        sleep(0.9)
         return
     detalhesChamado(op)
 
@@ -130,6 +133,7 @@ def atualizarChamado(id = ""):
         chamadoAtual['status'] = 'Em andamento'
         CHAMADOS[id] = chamadoAtual
         print(f'Alterado com sucesso para {chamadoAtual['status']}...')
+        sleep(0.9)
         salvarDados()
 
     elif op == 2:
@@ -137,41 +141,47 @@ def atualizarChamado(id = ""):
         chamadoAtual['status'] = 'Fechado'
         CHAMADOS[id] = chamadoAtual
         print(f'Alterado com sucesso para {chamadoAtual['status']}...')
+        sleep(0.9)
         salvarDados()
     elif op == 3:
         chamadoAtual = CHAMADOS[id]
         chamadoAtual['obs'] = str(input('Digite as observações: ')).strip()
         CHAMADOS[id] = chamadoAtual
         print('Adicionado com sucesso...')
+        sleep(0.9)
         salvarDados()
     else:
         print('Nenhuma opção válida! Tente novamente. ')
+        sleep(0.9)
 
 def detalhesChamado(id = ""):
     limparTela()
-    print('-'*85)
+    print('-'*115)
     if id == "" or id not in CHAMADOS:
         print('XXX - Chamado NÃO encontrado... Tente outro. - XXX')
+        sleep(0.9)
         return
     cabecalho(f"Detalhes do chamado #{id}")
     chamadoDetalhado = CHAMADOS[id]
     print(f"Descrição: {chamadoDetalhado['descricao']}")
     print(f'Solicitante: {chamadoDetalhado['solicitante']}')
     print(f"Setor: {chamadoDetalhado['setor']}")
-    print('-'*85)
+    print('-'*115)
     print(f"Status: {chamadoDetalhado['status']}")
     print(f"Abertura: {chamadoDetalhado['data']}")
     try: 
-        print('-'*85)
+        print('-'*115)
         print(f'--- Observações --- \n- {chamadoDetalhado['obs']}')
+        sleep(0.9)
     except KeyError:
         pass
-    print('-'*85)
+    print('-'*115)
     print('AÇÕES: [A]tualizar chamado | [V]oltar para a lista')
     print()
     op = str(input('SUA OPÇÃO: ')).strip().lower()
     if op == 'v':
         print('Voltando para a listagem...')
+        sleep(0.9)
         return
     elif op == 'a':
         atualizarChamado(id)
@@ -189,6 +199,7 @@ def listarChamados():
             op = int(input('SUA OPÇÃO: '))
             if op == 0:
                 print('Voltando menu...')
+                sleep(0.9)
                 break
             elif op == 1:
                 limparTela()
