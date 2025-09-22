@@ -14,11 +14,13 @@ while True:
             sleep(0.9)
             break
         elif op == 1:
-            listarChamados()
-        elif op == 2:
             abrirChamado()
+        elif op == 2:
+            listarChamados() 
         elif op == 3:
             buscarChamado()
+        elif op == 4:
+            atividadesExtras()
         else:
             limparTela()
             print('\nOPÇÃO INVÁLIDA! Selecione apenas dentre as disponíveis.')

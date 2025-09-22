@@ -4,6 +4,19 @@ import os
 from time import sleep
 
 CHAMADOS = {}
+AE = []
+#Abrir Base de Dados CHAMADOS
+try:
+    with open('baseDeDados.json', 'r', encoding='utf-8') as arquivo:
+        CHAMADOS = json.load(arquivo)
+except FileNotFoundError:
+    CHAMADOS = {}
+#Abrir Base de Dados ATIVIDADES EXTRAS
+try:
+    with open('atividades.json', 'r', encoding='utf-8') as arquivo:
+        AE = json.load(arquivo)
+except FileNotFoundError:
+        AE = []
 
 #Lógica para gerar ID's dinamicas e sequenciais
 def pegarUltimoID():
@@ -14,12 +27,6 @@ def pegarUltimoID():
         return ultimoElemento + 1
     else:
         return 1000
-
-try:
-    with open('baseDeDados.json', 'r', encoding='utf-8') as arquivo:
-        CHAMADOS = json.load(arquivo)
-except FileNotFoundError:
-    CHAMADOS = {}
 
 
 def salvarDados():
@@ -50,7 +57,7 @@ def resumo(user=""):
     print(f'  - {chamadosFechado} chamados CONCLUÍDOS')
 
 def menu():
-    print("[1] Ver lista de Chamados\n[2] Criar novo Chamado\n[3] Buscar por um chamado Específico\n[0] Sair do Sistema\n")
+    print("[1] Criar novo Chamado\n[2] Ver lista de Chamados\n[3] Buscar por um chamado Específico\n[4] Atividades Extras\n[0] Sair do Sistema\n")
     sleep(0.9)
 
 def abrirChamado():
@@ -230,3 +237,54 @@ def buscarChamado():
 
 def limparTela():
     os.system('cls')
+
+
+##################################
+# ATIVIDADES EXTRAS
+def menuAE():
+    print("[1] Criar Atividade Extra\n[2] Listar Atividade Extra\n[0] Retornar Menu\n")
+    sleep(0.9)
+def salvarDadosAE():
+    with open('atividades.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(AE, arquivo, ensure_ascii=False, indent=4)
+
+
+def atividadesExtras():
+        limparTela()
+        cabecalho('Atividades Extras')
+        menuAE()
+        print()
+        op = int(input('Sua opção: '))
+
+        if op == 1:
+            aeAtual = {}
+
+            aeAtual['titulo'] = input('Título: ').strip()
+            aeAtual['solicitante'] = input('Solicitante: ').strip().upper()
+            aeAtual['descricao'] = input('Descreva a solicitação: ').strip()
+            #Registrando o horário
+            hora = time.localtime()
+            dataDoRegistro = f"{hora.tm_mday}/{hora.tm_mon}/{hora.tm_year} - {hora.tm_hour}:{hora.tm_min}"
+            aeAtual['data'] = dataDoRegistro
+            AE.append(aeAtual)
+            print('Dados salvos com sucesso...')
+            salvarDadosAE()
+            
+        elif op == 2:
+            limparTela()
+            cabecalho('Listagem Atividades Extras')
+            print('-'*115)
+            for k, v in enumerate(AE):
+                print(f'{k+1}º Atividade')
+                for ae in v.values():
+                    print(f" - {ae}")
+
+            print('-'*115)
+            print()
+            subOp = str(input('Pressione ENTER para voltar ao menu.')).strip().lower()
+
+            
+        elif op == 3:
+            print('Retornando ao menu anterior...')
+            sleep(0.9)
+            return
