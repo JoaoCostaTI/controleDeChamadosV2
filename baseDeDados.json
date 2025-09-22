@@ -4,8 +4,8 @@
         "setor": "INFORMATICA",
         "data": "18/9/2025 - 16:20",
         "descricao": "procurar fornecedores para conserto botao power monitor dell (b87gky3)",
-        "status": "Aberto",
-        "obs": "Realizado nova tentativa de abertura de OS junto a Dell, mas não foi possível. Protocolo = 215985021"
+        "status": "Fechado",
+        "obs": "Chamado aberto OS: 462446477"
     },
     "1001": {
         "solicitante": "JOAO",
@@ -90,13 +90,6 @@
         "setor": "PEDAGOGIA",
         "data": "19/9/2025 - 16:30",
         "descricao": "suporte live dia do instrutor (23/09)",
-        "status": "Aberto"
-    },
-    "1013": {
-        "solicitante": "JOAO",
-        "setor": "TESTE",
-        "data": "22/9/2025 - 10:5",
-        "descricao": "teste",
         "status": "Aberto"
     }
 }
