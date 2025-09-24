@@ -36,7 +36,8 @@
         "descricao": "compartilhamento pastas de rede lmc",
         "status": "Aberto",
         "obs": [
-            "Combinado dia 25/09 o atendimento da demanda"
+            "Combinado dia 25/09 o atendimento da demanda",
+            "Foi solicitado que apenas Azarias, Jammerson e Patricia tivessem acesso direto a pasta LMC, e controle de subpastas a apenas algumas pessoas especificas."
         ]
     },
     "1005": {
@@ -115,5 +116,12 @@
         "descricao": "computadores sem funcionar no container 24",
         "status": "Fechado",
         "obs": "Aberto chamado na Dell, monitor com defeito. OS = 462503200"
+    },
+    "1015": {
+        "solicitante": "VOLTAR",
+        "setor": "VLTAR",
+        "data": "24/9/2025 - 13:0",
+        "descricao": "1",
+        "status": "Aberto"
     }
 }
