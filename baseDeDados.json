@@ -35,14 +35,19 @@
         "data": "18/9/2025 - 16:24",
         "descricao": "compartilhamento pastas de rede lmc",
         "status": "Aberto",
-        "obs": "Combinado dia 25/09 a finalização da demanda"
+        "obs": [
+            "Combinado dia 25/09 o atendimento da demanda"
+        ]
     },
     "1005": {
         "solicitante": "JOAO",
         "setor": "INFORMATICA",
         "data": "18/9/2025 - 16:24",
         "descricao": "canaleta ap (laboratório bim)",
-        "status": "Aberto"
+        "status": "Aberto",
+        "obs": [
+            "E-mail disparado para supervisão administrativa, aguardando a aquisição do material"
+        ]
     },
     "1006": {
         "solicitante": "JOAO",

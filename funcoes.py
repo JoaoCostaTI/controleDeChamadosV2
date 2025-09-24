@@ -150,7 +150,12 @@ def atualizarChamado(id = ""):
         salvarDados()
     elif op == 3:
         chamadoAtual = CHAMADOS[id]
-        chamadoAtual['obs'] = str(input('Digite as observações: ')).strip()
+        try: 
+            chamadoOBS = CHAMADOS[id]['obs']
+        except:
+            chamadoOBS = []
+        chamadoOBS.append(input('Digite as observações: ').strip())
+        chamadoAtual['obs'] = chamadoOBS
         CHAMADOS[id] = chamadoAtual
         print('Adicionado com sucesso...')
         sleep(0.9)
@@ -176,7 +181,9 @@ def detalhesChamado(id = ""):
     print(f"Abertura: {chamadoDetalhado['data']}")
     try: 
         print('-'*115)
-        print(f'--- Observações --- \n- {chamadoDetalhado['obs']}')
+        print(f'~~~~ OBSERVAÇÕES ~~~~')
+        for d in chamadoDetalhado['obs']:
+            print(f"   - {d}")
         sleep(0.9)
     except KeyError:
         pass
