@@ -19,7 +19,8 @@
         "setor": "INSTRUTOR",
         "data": "18/9/2025 - 16:23",
         "descricao": "rede iot",
-        "status": "Aberto"
+        "status": "Fechado",
+        "obs": "Criado a rede para atender a demanda, será utilizado apenas para os dispositivos IOT"
     },
     "1003": {
         "solicitante": "LEONARDO",
@@ -33,7 +34,8 @@
         "setor": "SUPERVISAO TECNICA",
         "data": "18/9/2025 - 16:24",
         "descricao": "compartilhamento pastas de rede lmc",
-        "status": "Aberto"
+        "status": "Aberto",
+        "obs": "Combinado dia 25/09 a finalização da demanda"
     },
     "1005": {
         "solicitante": "JOAO",
@@ -61,7 +63,8 @@
         "setor": "INFORMATICA",
         "data": "19/9/2025 - 11:30",
         "descricao": "colocar computadores biblioteca",
-        "status": "Aberto"
+        "status": "Fechado",
+        "obs": "Colocado os computadores na biblioteca."
     },
     "1009": {
         "solicitante": "JOAO",
@@ -91,5 +94,21 @@
         "data": "19/9/2025 - 16:30",
         "descricao": "suporte live dia do instrutor (23/09)",
         "status": "Aberto"
+    },
+    "1013": {
+        "solicitante": "TAYLON",
+        "setor": "ALMOXARIFADO",
+        "data": "23/9/2025 - 13:19",
+        "descricao": "impressão cortando",
+        "status": "Fechado",
+        "obs": "Impressão estava programada como A3, foi realizado a correção para A4"
+    },
+    "1014": {
+        "solicitante": "AMILTON",
+        "setor": "INSTRUTOR",
+        "data": "24/9/2025 - 8:32",
+        "descricao": "computadores sem funcionar no container 24",
+        "status": "Fechado",
+        "obs": "Aberto chamado na Dell, monitor com defeito. OS = 462503200"
     }
 }
