@@ -42,10 +42,11 @@
         "setor": "SUPERVISAO TECNICA",
         "data": "18/9/2025 - 16:24",
         "descricao": "compartilhamento pastas de rede lmc",
-        "status": "Aberto",
+        "status": "Em andamento",
         "obs": [
             "Combinado dia 25/09 o atendimento da demanda",
-            "Foi solicitado que apenas Azarias, Jammerson e Patricia tivessem acesso direto a pasta LMC, e controle de subpastas a apenas algumas pessoas especificas."
+            "Foi solicitado que apenas Azarias, Jammerson e Patricia tivessem acesso direto a pasta LMC, e controle de subpastas a apenas algumas pessoas especificas.",
+            "Não foi possível o atendimento no dia 25/09, será feito nova tentativa de contato com a colaboradora solicitante."
         ]
     },
     "1005": {
@@ -70,10 +71,11 @@
         "setor": "INFORMATICA",
         "data": "19/9/2025 - 11:30",
         "descricao": "instalar veyon (computadores que eram do bim) no lab 4",
-        "status": "Aberto",
+        "status": "Fechado",
         "obs": [
             "Realizado todas as configurações necessárias."
-        ]
+        ],
+        "dataFechamento": "26/9/2025 - 8:48"
     },
     "1008": {
         "solicitante": "JOAO",
@@ -92,7 +94,9 @@
         "data": "19/9/2025 - 13:26",
         "descricao": "controle atualização windows 10",
         "status": "Aberto",
-        "obs": "Biblioteca (1 Computador)"
+        "obs": [
+            "Biblioteca (1 Computador)"
+        ]
     },
     "1010": {
         "solicitante": "JOAO",

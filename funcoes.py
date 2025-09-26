@@ -131,7 +131,7 @@ def percorrerChamados(status = ""):
 
 def atualizarChamado(id = ""):  
     print(f'--- ATUALIZAR CHAMADO #{id} ---')
-    print('O que você deseja fazer? ')
+    print('~~~~~~ O que você deseja fazer? ~~~~~~')
     print('[1] - Colocar Em Andamento\n[2] - FECHAR chamado\n[3] - Adicionar histórico (Observações)\n[0] - Cancelar')
     op = int(input('SUA OPÇÃO: '))
     if op == 0:
@@ -170,6 +170,8 @@ def atualizarChamado(id = ""):
     else:
         print('Nenhuma opção válida! Tente novamente. ')
         sleep(0.9)
+    atualizarChamado(id)
+    
 
 def detalhesChamado(id = ""):
     limparTela()
@@ -186,9 +188,12 @@ def detalhesChamado(id = ""):
     print('-'*115)
     print(f"Status: {chamadoDetalhado['status']}")
     print(f"Abertura: {chamadoDetalhado['data']}")
-    try: 
+    try:
         print(f"Fechamento: {chamadoDetalhado['dataFechamento']}")
         print('-'*115)
+    except KeyError:
+        pass
+    try:
         print(f'~~~~ OBSERVAÇÕES ~~~~')
         for d in chamadoDetalhado['obs']:
             print(f"   - {d}")
@@ -211,11 +216,23 @@ def detalhesChamado(id = ""):
         return    
     
 def listarChamados():
+    aberto = 0
+    emAndamento = 0
+    fechado = 0
+    for c in CHAMADOS.values():
+        if c['status'] == 'Aberto':
+            aberto += 1
+        if c['status'] == 'Fechado':
+            fechado += 1
+        if c['status'] == 'Em andamento':
+            emAndamento += 1
+    todos = aberto + fechado + emAndamento  
+
     while True:
         try:
             limparTela()
             cabecalho('LISTA DE CHAMADOS')
-            print('[1] - Abertos\n[2] - Em andamento\n[3] - Fechados\n[4] - Todos\n[0] - Voltar menu ')
+            print(f'[1] - Abertos - ({aberto})\n[2] - Em andamento - ({emAndamento})\n[3] - Fechados - ({fechado})\n[4] - Todos - ({todos})\n[0] - Voltar menu ')
             op = int(input('SUA OPÇÃO: '))
             if op == 0:
                 print('Voltando menu...')
