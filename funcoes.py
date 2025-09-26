@@ -63,7 +63,11 @@ def menu():
 def abrirChamado():
     limparTela()
     cabecalho('REGISTRAR CHAMADO')
-    solicitante = str(input('Seu nome: ')).strip().upper()
+    solicitante = str(input('Seu nome [0] para voltar: ')).strip().upper()
+    if solicitante == "0":
+        print('Retornando...')
+        sleep(0.9)
+        return
     setor = str(input("Setor: ")).strip().upper()
     descricao = str(input('Detalhamento da solicitação: ')).strip().lower()
 
@@ -144,6 +148,9 @@ def atualizarChamado(id = ""):
     elif op == 2:
         chamadoAtual = CHAMADOS[id]
         chamadoAtual['status'] = 'Fechado'
+        hora = time.localtime()
+        dataDoRegistro = f"{hora.tm_mday}/{hora.tm_mon}/{hora.tm_year} - {hora.tm_hour}:{hora.tm_min}"
+        chamadoAtual['dataFechamento'] = dataDoRegistro
         CHAMADOS[id] = chamadoAtual
         print(f'Alterado com sucesso para {chamadoAtual['status']}...')
         sleep(0.9)
@@ -180,6 +187,7 @@ def detalhesChamado(id = ""):
     print(f"Status: {chamadoDetalhado['status']}")
     print(f"Abertura: {chamadoDetalhado['data']}")
     try: 
+        print(f"Fechamento: {chamadoDetalhado['dataFechamento']}")
         print('-'*115)
         print(f'~~~~ OBSERVAÇÕES ~~~~')
         for d in chamadoDetalhado['obs']:
