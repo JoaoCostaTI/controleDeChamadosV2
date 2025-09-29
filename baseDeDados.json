@@ -164,5 +164,13 @@
         "data": "25/9/2025 - 8:18",
         "descricao": "verificar nobreak [240126] do cftv",
         "status": "Aberto"
+    },
+    "1017": {
+        "solicitante": "JOAO",
+        "setor": "INFORMATICA",
+        "data": "26/9/2025 - 16:52",
+        "descricao": "verificar com val dia da demanda da semana do livro em outubro",
+        "status": "Fechado",
+        "dataFechamento": "29/9/2025 - 14:1"
     }
 }

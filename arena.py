@@ -168,21 +168,26 @@ CHAMADOS = {
     }
 }
 
-#Aberto
-#Fechado
-#Em andamento
 
+#Algoritmo 1
 aberto = 0
 fechado = 0
 emAndamento = 0
-
-
 for c in CHAMADOS.values():
     if c['status'] == "Aberto":
         aberto += 1
-    if c['status'] == "Fechado":
+    elif c['status'] == "Fechado":
         fechado += 1
-    if c['status'] == "Em andamento":
+    else:
         emAndamento += 1 
 todos = aberto + fechado + emAndamento
 print(f"{aberto} - {fechado} - {emAndamento} - {todos}")
+
+#Algoritmo 2
+status = []
+for c in CHAMADOS.values():
+    status.append(c['status'])
+print(status.count('Aberto'))
+print(status.count('Fechado'))
+print(status.count('Em andamento'))
+print(len(status))

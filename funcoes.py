@@ -222,9 +222,9 @@ def listarChamados():
     for c in CHAMADOS.values():
         if c['status'] == 'Aberto':
             aberto += 1
-        if c['status'] == 'Fechado':
+        elif c['status'] == 'Fechado':
             fechado += 1
-        if c['status'] == 'Em andamento':
+        else:
             emAndamento += 1
     todos = aberto + fechado + emAndamento  
 
