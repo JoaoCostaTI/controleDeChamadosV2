@@ -158,6 +158,7 @@ def atualizarChamado(id = ""):
         print('Retornando para listagem de chamados...')
         sleep(0.9)
         listarChamados()
+        return
     elif op == 3:
         chamadoAtual = CHAMADOS[id]
         try: 
@@ -175,7 +176,6 @@ def atualizarChamado(id = ""):
         sleep(0.9)
     atualizarChamado(id)
     
-
 def detalhesChamado(id = ""):
     limparTela()
     print('-'*115)
@@ -254,11 +254,14 @@ def listarChamados():
                 limparTela()
                 percorrerChamados("")
             else:
-                limparTela()
                 print('Nenhuma opção selecionada, tente novamente...')
+                sleep(0.9)
+                listarChamados()
+            return
         except ValueError:
             limparTela()
             print('\nERRO! Digite apenas números. ')
+            sleep(0.9)
 
 def buscarChamado():
     limparTela()
