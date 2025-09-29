@@ -153,8 +153,11 @@ def atualizarChamado(id = ""):
         chamadoAtual['dataFechamento'] = dataDoRegistro
         CHAMADOS[id] = chamadoAtual
         print(f'Alterado com sucesso para {chamadoAtual['status']}...')
-        sleep(0.9)
+        sleep(0.1)
         salvarDados()
+        print('Retornando para listagem de chamados...')
+        sleep(0.9)
+        listarChamados()
     elif op == 3:
         chamadoAtual = CHAMADOS[id]
         try: 
