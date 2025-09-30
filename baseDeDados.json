@@ -172,5 +172,15 @@
         "descricao": "verificar com val dia da demanda da semana do livro em outubro",
         "status": "Fechado",
         "dataFechamento": "29/9/2025 - 15:12"
+    },
+    "1018": {
+        "solicitante": "LEONARDO",
+        "setor": "SUPERVISAO TECNICA",
+        "data": "30/9/2025 - 8:40",
+        "descricao": "formatar notebook",
+        "status": "Aberto",
+        "obs": [
+            "Foi planejado para dia 9/10(Quinta-Feira) a formatação"
+        ]
     }
 }
