@@ -227,7 +227,7 @@ def listarChamados():
             aberto += 1
         elif c['status'] == 'Fechado':
             fechado += 1
-        else:
+        elif c['status'] == 'Em andamento':
             emAndamento += 1
     todos = aberto + fechado + emAndamento  
 
@@ -256,8 +256,6 @@ def listarChamados():
             else:
                 print('Nenhuma opção selecionada, tente novamente...')
                 sleep(0.9)
-                listarChamados()
-            return
         except ValueError:
             limparTela()
             print('\nERRO! Digite apenas números. ')

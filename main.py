@@ -17,7 +17,6 @@ while True:
             abrirChamado()
         elif op == 2:
             listarChamados() 
-            
         elif op == 3:
             buscarChamado()
         elif op == 4:
