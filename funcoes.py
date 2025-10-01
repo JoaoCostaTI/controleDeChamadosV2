@@ -157,7 +157,6 @@ def atualizarChamado(id = ""):
         salvarDados()
         print('Retornando para listagem de chamados...')
         sleep(0.9)
-        listarChamados()
         return
     elif op == 3:
         chamadoAtual = CHAMADOS[id]
