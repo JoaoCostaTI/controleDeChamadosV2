@@ -178,10 +178,11 @@
         "setor": "SUPERVISAO TECNICA",
         "data": "30/9/2025 - 8:40",
         "descricao": "formatar notebook",
-        "status": "Aberto",
+        "status": "Fechado",
         "obs": [
             "Foi planejado para dia 9/10(Quinta-Feira) a formatação"
-        ]
+        ],
+        "dataFechamento": "14/10/2025 - 16:21"
     },
     "1019": {
         "solicitante": "TESTE",
@@ -190,5 +191,21 @@
         "descricao": "teste",
         "status": "Fechado",
         "dataFechamento": "1/10/2025 - 16:41"
+    },
+    "1020": {
+        "solicitante": "TESTE",
+        "setor": "TESTE",
+        "data": "14/10/2025 - 16:22",
+        "descricao": "teste",
+        "status": "Fechado",
+        "dataFechamento": "14/10/2025 - 16:22"
+    },
+    "1021": {
+        "solicitante": "TESTE",
+        "setor": "TESTE",
+        "data": "14/10/2025 - 16:23",
+        "descricao": "teste",
+        "status": "Fechado",
+        "dataFechamento": "14/10/2025 - 16:23"
     }
 }

@@ -218,19 +218,18 @@ def detalhesChamado(id = ""):
         return    
     
 def listarChamados():
-    aberto = 0
-    emAndamento = 0
-    fechado = 0
-    for c in CHAMADOS.values():
-        if c['status'] == 'Aberto':
-            aberto += 1
-        elif c['status'] == 'Fechado':
-            fechado += 1
-        elif c['status'] == 'Em andamento':
-            emAndamento += 1
-    todos = aberto + fechado + emAndamento  
-
     while True:
+        aberto = 0
+        emAndamento = 0
+        fechado = 0
+        for c in CHAMADOS.values():
+            if c['status'] == 'Aberto':
+                aberto += 1
+            elif c['status'] == 'Fechado':
+                fechado += 1
+            elif c['status'] == 'Em andamento':
+                emAndamento += 1
+        todos = aberto + fechado + emAndamento 
         try:
             limparTela()
             cabecalho('LISTA DE CHAMADOS')
